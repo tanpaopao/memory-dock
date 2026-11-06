@@ -1,0 +1,11 @@
+.DS_Store
+
+# Build artifacts
+build/
+dist/
+*.dmg
+*.zip
+
+# Xcode user state
+xcuserdata/
+*.xcuserstate

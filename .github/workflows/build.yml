@@ -1,0 +1,45 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  plugin-syntax:
+    name: DSH plugin syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check plugin JavaScript and locale JSON
+        run: |
+          node --check dsh-plugin/index.js
+          node --check dsh-plugin/client.js
+          node -e "const fs=require('fs'); for (const f of ['dsh-plugin/package.json','dsh-plugin/locale/en.json','dsh-plugin/locale/zh.json']) JSON.parse(fs.readFileSync(f,'utf8')); console.log('json ok')"
+
+  app-build:
+    name: macOS app (${{ matrix.runner }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-14]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build MemoryDock.app
+        run: |
+          chmod +x build.sh
+          ./build.sh
+      - name: Package zip
+        run: |
+          cp -R build/MemoryDock.app "build/记忆坞.app"
+          cd build
+          ditto -c -k --sequesterRsrc --keepParent "记忆坞.app" "MemoryDock-${GITHUB_SHA::7}.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MemoryDock-${{ matrix.runner }}
+          path: build/MemoryDock-*.zip
+          if-no-files-found: error
