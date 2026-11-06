@@ -136,7 +136,7 @@ MemoryDock/
 
 ## 发布到 GitHub
 
-仓库已经初始化为 `main` 分支并包含构建工作流。登录 GitHub CLI 后执行：
+仓库已经初始化为 `main` 分支并包含构建工作流。先安装 [GitHub CLI](https://cli.github.com/)，登录后执行：
 
 ```bash
 gh auth login
