@@ -1,5 +1,7 @@
 # 记忆坞 MemoryDock
 
+[GitHub 仓库](https://github.com/tanpaopao/memory-dock) · [Releases](https://github.com/tanpaopao/memory-dock/releases)
+
 一个纯本地的记忆工具，包含两种形态：
 
 - **macOS 桌面版**：常驻悬浮球 + 原生记忆面板，可把记忆文件原生拖进 ChatGPT、DeepSeek、Claude 或任意 AI 应用。
@@ -136,7 +138,7 @@ MemoryDock/
 
 ## 发布到 GitHub
 
-仓库已经初始化为 `main` 分支并包含构建工作流。先安装 [GitHub CLI](https://cli.github.com/)，登录后执行：
+项目已发布在 [tanpaopao/memory-dock](https://github.com/tanpaopao/memory-dock)。仓库包含 `main` 分支和构建工作流。需要重新发布时，先安装 [GitHub CLI](https://cli.github.com/)，登录后执行：
 
 ```bash
 gh auth login
