@@ -162,6 +162,7 @@ window.__ModuleLoader__.load({
         to { opacity: 1; transform: translateY(0) scale(1); }
       }
       .mdz-head {
+        position: relative; z-index: 3;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -180,6 +181,7 @@ window.__ModuleLoader__.load({
       .mdz-sub { margin-top: 1px; font-size: 10px; color: var(--dsw-alias-label-secondary); }
       .mdz-icon-btn {
         width: 27px; height: 27px; flex: none; padding: 0; border: 0; border-radius: 7px;
+        pointer-events: auto; -webkit-app-region: no-drag;
         background: transparent; color: var(--dsw-alias-label-secondary);
         font: inherit; font-size: 18px; line-height: 1; cursor: pointer;
         display: inline-flex; align-items: center; justify-content: center;
@@ -268,6 +270,7 @@ window.__ModuleLoader__.load({
       .mdz-empty-title { font-size: 12px; font-weight: 600; color: var(--dsw-alias-label-secondary); }
       .mdz-empty-copy { margin-top: 4px; font-size: 10px; line-height: 1.45; white-space: pre-line; opacity: .78; }
       .mdz-foot {
+        position: relative; z-index: 3;
         flex: none; display: flex; align-items: center; gap: 4px;
         min-height: 42px; padding: 8px 14px 9px;
         border-top: 1px solid var(--dsw-alias-border-l1);
@@ -279,11 +282,12 @@ window.__ModuleLoader__.load({
       }
       .mdz-foot-btn {
         flex: none; height: 24px; padding: 0 7px; border: 0; border-radius: 6px;
+        pointer-events: auto; -webkit-app-region: no-drag;
         background: transparent; color: var(--dsw-alias-label-secondary);
         font: inherit; font-size: 10px; cursor: pointer;
       }
       .mdz-foot-btn:hover { color: var(--dsw-alias-label-primary); background: var(--dsw-alias-interactive-bg-hover, rgba(255,255,255,.08)); }
-      .mdz-settings { padding: 0 14px 16px; }
+      .mdz-settings { position: relative; z-index: 3; padding: 0 14px 16px; }
       .mdz-settings-title { font-size: 12px; font-weight: 650; margin: 0 0 3px; }
       .mdz-settings-copy { font-size: 10px; line-height: 1.5; color: var(--dsw-alias-label-secondary); opacity: .82; overflow-wrap: anywhere; }
       .mdz-path {
@@ -295,6 +299,7 @@ window.__ModuleLoader__.load({
       .mdz-button-row { display: flex; flex-wrap: wrap; gap: 6px; }
       .mdz-action {
         height: 28px; padding: 0 10px; border: 1px solid var(--dsw-alias-border-l2); border-radius: 7px;
+        pointer-events: auto; -webkit-app-region: no-drag;
         background: transparent; color: var(--dsw-alias-label-primary); font: inherit; font-size: 10.5px; cursor: pointer;
       }
       .mdz-action:hover { background: var(--dsw-alias-interactive-bg-hover, rgba(255,255,255,.08)); }

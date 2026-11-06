@@ -134,6 +134,17 @@ MemoryDock/
 └── build/MemoryDock.app
 ```
 
+## 发布到 GitHub
+
+仓库已经初始化为 `main` 分支并包含构建工作流。登录 GitHub CLI 后执行：
+
+```bash
+gh auth login
+./publish.sh memory-dock public
+```
+
+`publish.sh` 会在当前账号下创建 `memory-dock` 仓库并推送；传入第二个参数 `private` 可创建私有仓库。
+
 ## 说明
 
 - 应用不在 App Sandbox 中运行，因此可以直接读取你选择的工作区文件夹。
