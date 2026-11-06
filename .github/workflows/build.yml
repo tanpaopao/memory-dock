@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [macos-14]
+        runner: [macos-15]
     steps:
       - uses: actions/checkout@v4
       - name: Build MemoryDock.app
